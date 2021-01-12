@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Desafio 03 JS Ninja</title>
+    </head>
+    <body></body>
+    <script>
+        var qualquer = {};
+
+        var pessoa = {
+            nome: 'Pedro',
+            sobrenome: 'Nepomuceno',
+            sexo: 'Masculino',
+            idade: 19,
+            altura: '1.78',
+            peso: 79.8,
+            andando: false,
+            caminhouQuantosMetros: 0
+        }
+
+        pessoa.fazerAniversario = function() { pessoa.idade += 1; }
+
+        pessoa.fazerAniversario();
+        
+
+        pessoa.andar = function(m) {
+            pessoa.caminhouQuantosMetros += m;
+            pessoa.andando = true;
+            
+        }   
+        pessoa.parar = function() { pessoa.andando = false; }
+        pessoa.parar();
+        
+        pessoa.nomeCompleto = function() { 
+        return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome }
+        pessoa.nomeCompleto();
+
+        pessoa.mostrarIdade = function() { return 'tenho ' + pessoa.idade + ' ' + 'anos'; } 
+        pessoa.mostrarIdade();
+
+        pessoa.mostrarPeso = function() { return 'Eu peso ' + pessoa.peso + 'KG'; }
+        pessoa.mostrarPeso();
+
+        pessoa.mostrarAltura = function() { return 'Minha altura é ' + pessoa.altura + 'm'; }
+        pessoa.mostrarAltura();
+
+        console.log(pessoa.nomeCompleto());
+        console.log(pessoa.mostrarIdade());
+        console.log(pessoa.mostrarPeso());
+        console.log(pessoa.mostrarAltura());
+
+        pessoa.fazerAniversario();
+        pessoa.fazerAniversario();
+        pessoa.fazerAniversario();
+
+        pessoa.apresentacao = function() {
+            if (pessoa.idade == 1) {
+                pessoa.mostrarIdade = function() { 
+                return 'tenho ' + pessoa.idade + ' ' + 'ano'; 
+                }
+             if (pessoa.caminhouQuantosMetros > 1) {
+                pessoa.caminhouQuantosMetros += ' metros';
+            } if (pessoa.caminhouQuantosMetros == 1) {
+                pessoa.caminhouQuantosMetros += ' metro';
+            } if (pessoa.caminhouQuantosMetros == 0) {
+                pessoa.caminhouQuantosMetros = 'nada até agora';
+            } if (pessoa.caminhouQuantosMetros == -1) {
+                pessoa.caminhouQuantosMetros += ' metro negativo';
+            } if (pessoa.caminhouQuantosMetros < -1) {
+                pessoa.caminhouQuantosMetros += ' metros negativos';
+            }
+            return pessoa.nomeCompleto() + ', ' + pessoa.mostrarIdade() + ', ' + 
+            pessoa.mostrarPeso() + ' e ' + pessoa.mostrarAltura() + ' e eu já caminhei ' 
+            + pessoa.caminhouQuantosMetros;
+        }}
+
+        pessoa.idade = 1;
+        
+        pessoa.caminhouQuantosMetros = 2;
+        console.log(pessoa.apresentacao());
+        
+
+
+        
+
+    </script>
+</html>

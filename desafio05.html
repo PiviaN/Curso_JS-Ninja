@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Desafio 05 - JS Ninja</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        
+        var myarray = ['jubileu', false, 'irineu', 245, true];
+
+        function returnArray(param) {
+            return param;
+        }
+
+        console.log(returnArray(myarray[1])); //retorna false
+
+        function indexOfArray(arrayValue, numero) {
+            return arrayValue[numero];
+        }
+
+        var array2 = ['text', 'null', 'false', 'NaN', 'String'];
+
+        console.log(indexOfArray(array2, 2 ));
+
+        function book(nome) {
+            
+            livros = {
+                'livroUm': { 
+                nome: 'Jubileu Inocente',
+                quantidadePaginas: 123,
+                autor: 'Herbert Rich',
+                editora: 'suquinho de caju',
+                },
+                'livroDois': { 
+                nome: 'A lenda do Faustão',
+                quantidadePaginas: 253,
+                autor: 'Renato Aragão',
+                editora: 'Globo',
+                },
+                'livroTres': { 
+                nome:'5 motivos para criar um motivo',
+                quantidadePaginas: 5,
+                autor: 'zé ninguém',
+                editora: 'tanto faz',
+                }
+            }
+            return !nome ? livros : livros[nome];
+        }
+
+        console.log(book());
+
+        console.log('O livro ' + book('livroUm').nome + ' tem ' + book('livroUm' ).quantidadePaginas + ' páginas!' );
+
+        console.log('O autor do livro ' + book('livroDois').nome + ' é o ' + book('livroDois').autor);
+
+        console.log('O livro ' + book('livroTres').nome + ' foi publicado pela editora ' + book('livroTres').editora);
+        </script>
+</html>

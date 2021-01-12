@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Desafio 11 - Curso JS Ninja</title>
+    </head>
+    <body></body>
+    <script>
+        (function() {
+
+            var once = false;
+            
+            do {
+                console.log('Condição imposta e aceita!');
+            }
+            while (once); 
+
+            const person = {
+                name: 'Pedro',
+                age: 12,
+                weight: 79,
+                birthday: '09/01/2001'
+            }
+            var counter = 0;
+            for (var prop in person) {
+                console.log('The ' + prop + ' of person is ' + person[prop]);
+                counter++;
+            }
+            console.log('The object Person has ' + counter + ' properties');
+
+            function moreThan(objectName) {
+                if (objectName.age > 25) {
+                    return 'The person has more than 25 years old? ' + true;
+                } 
+                return 'The person has more than 25 years old? ' + false;
+            }
+
+            console.log(moreThan(person));
+
+            function pushNumbersToArray() {
+            var array = [];
+                for (var i = 0; i < 20; i++) {
+                if (i === 10) {
+                break;
+                }
+                array.push(i);
+                }
+            console.log(array);
+            }
+
+            pushNumbersToArray();
+
+            function pushOddNumbersToArray() {
+            var array = [];
+            for (var i = 0; i < 20; i++) {
+                if (i % 2 !== 0) {
+                array.push(i);
+                }
+            }
+            console.log(array);
+            }
+                
+            pushOddNumbersToArray();    
+
+        })()
+    </script>
+</html>

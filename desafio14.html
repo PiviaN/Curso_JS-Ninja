@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Desafio 14 - JS Ninja</title></head>
+    <body>
+        
+    </body>
+    <script>
+        (function() {
+
+            var numberObjects = [];
+            for(var i= 1; i < 10; i++) {
+                numberObjects.push({number: i});
+            }
+
+            console.log('\nJust Numbers:', numberObjects);
+
+            var justNumbers = numberObjects.map(function(item) {
+                return item.number;
+            });
+
+            console.log('\nJust Numbers:', justNumbers);
+
+            var justMod2Or3 = justNumbers.filter(function(item) {
+                return item % 2 === 0 || item % 3 === 0;
+            });
+             
+            console.log('\nJust module of division by 2 or 3:', justMod2Or3);
+
+            var operation = justMod2Or3.reduce(function(acumulado,atual) {
+                return (acumulado + 1) * atual;
+            }, 0);
+
+            console.log('\nOperation',operation);
+
+            var operation2 = justMod2Or3.reduceRight(function(acumulado,atual) {
+                return (acumulado + 1) * atual;
+            }, 0);
+
+            console.log('\nOperation 2:', operation2);
+
+            var nameSilaba = ['PE', 'DRO'];
+            var name = ['P','E','D','R','O'];
+
+            var reduceP = name.reduce(function(acumulado, atual) {
+                return acumulado + 'P' + atual;
+            }, '');
+
+            console.log('Jogo do P:', reduceP);
+
+            var inversedName = name.reduceRight(function(acumulado, atual) {
+                return acumulado + atual;
+            });
+
+            console.log('\nNome Reverso:', inversedName);
+
+            console.log('\n numberObjects', numberObjects);
+
+            var obj = numberObjects[1];
+                
+            if(numberObjects.indexOf(numberObjects[1]) > -1) {
+                console.log('Existe um objeto { number: 2 }');
+            } else {
+                console.log('Não existe um objeto { number: 2 }');
+            }
+            
+            if(numberObjects.lastIndexOf(numberObjects[1], 2) > -1) {
+                console.log('Existe um objeto { number: 2 }');
+            } else {
+                console.log('Não existe um objeto { number: 2 }');
+            }
+
+            console.log(Array.isArray(justMod2Or3) ? 'justMod2Or3 confirmado como array' : 'Não');
+            
+        })()
+    </script>
+</html>

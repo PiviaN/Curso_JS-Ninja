@@ -1,0 +1,113 @@
+Termos
+G: Global case
+I: Ignore case
+
+\w > caracteres alfanuméricos
+\d > números 
+
+Ex: Buscar letras 'M' em uma string
+texto.match(/m/g);
+
+Ex: buscar todas as letras
+texto.match(/\w/);
+
+Ex: buscando conjuntos de 2 números
+texto.match(/\d\d/g);
+
+Para buscar mais de 1 correspondência, utilizamos o |
+Para buscar uma classe de matches, utilizamos o []
+
+Podemos também buscar por vários conjuntos 
+Ex: 1817|1815 
+
+Buscando de A-Z:
+[A-Z]
+[A-Za-z0-9]
+Podemos simplificar, usando [A-z]
+
+Dica: Podemos utilizar RegEx com o Replace
+Ex: texto.replace(/de/g, 'DE')
+
+O Caráctere especial '$' serve para retornar a captura de uma string.
+Ex: texto.replace(/(de)(e)/g, '$1$1') Trocará todos os 'de' por 'dd'
+$& pega todas as capturas ( no caso, 'd' e 'e')
+Pode utilizar uma function também para tratar a captura de dados.
+
+Ex: texto.replace(/(d)(e)/g, function(capturaTotal, d, e) {
+	return (d + e).toUpperCase();
+})
+
+Ex2: 'Fernando'.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2) {
+	return letra1.toUpperCase() + letra2.toLowerCase();
+});
+=== > "FeRnAnDo"
+
+
+\s: Representa os espaços em branco
+\n: Representa a quebra de linha
+\t: Representa a tabulação
+.: Representa qualquer caráctere, exceto quebra de linha
+
+Negação: 
+[^abc] Retornará qualquer item menos o a,b,c
+\W Retornará qualquer item que não seja alfanumérico
+\D Retornará qualquer caráctere exceto os números
+\S Retornará qualquer caráctere exceto os espaços em branco
+
+Dica para pegar todos os carácteres de um texto:
+[\S\s]
+
+Repetidores: Podemos usá-los para para buscar carácteres que se repetem (ficam juntos)
+Ex: \w\w, \d\d, \s-\s etc
+
+Repetidor de Intervalo: {n,m}
+Item anterior ao menos 'n' vezes, e no máximo 'm' vezes.
+Ex: \d{2,4} Retornará número no mímimo 2 e máximo 4 (Estando estes juntos)
+
+{n, }
+Intervalo aberto - item anterior n ou mais vezes
+{n} Iten anterior exatamente n de vezes
+
+? - Opcional - zero ou uma ocorrência do item anterior
+Ex: \d\d\d? - O terceiro é opcional
+
++ - Uma ou mais ocorrências do item anterior
+Dica: Podemos fazer os matchs das palavras utilizando o '\w+'
+
+* - Zero ou mais ocorrências do item anterior
+
+Validando um endereço de site usando RegEx:
+/https?:\/\/\w+[.\w]+/
+Agora um email:
+/^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/
+
+^: Início de String
+$: Fim de String
+M: Multiline > Mais utilizado para o casamento de várias linhas quando o '^' está presente
+?: Captura não gulosa (irá fazer match somente com os carácteres necessários.) (sómente se for utilizado
+após um repetidor)
+
+Fazer match sem a captura:
+Ex: /ju(?:n|l)ho > junho ou julho
+
+\1, \2, etc... Faz a referencia a um grupo dentro da própria regEx
+
+Métodos de String onde você pode usar regEx:
+Match: retornará um array com a captura da string
+Replace(regexp, string)
+Split(regexp) : quebra a string no parâmetro passado, retornando um array separado
+Search(regexp) : Fará uma busca na string do regex passado, e retornará sua posição (índice)
+
+Construtor RegExp:
+var regex = new RegExp('nando');
+==== /nando/
+com números:
+regex = new RegExp('\\d');
+==== /\d/
+A '\' servirá para você 'escapar' um caráctere na validação
+
+Métodos RegExp: 
+.test(string) Testa para ver se tem algum caráctere na string passado por parâmetro. 
+Retorna true ou false
+.lastIndex
+.exec

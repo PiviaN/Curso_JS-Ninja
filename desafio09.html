@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Desafio 09 - Curso JS Ninja</title>
+    </head>
+    <body></body>
+    <script>
+
+        (function() {
+
+            function myFunction() {
+                var number1 = 10;
+                return number1 + number2;
+                var number2 = 20;
+                console.log('Na função ' + myFunction() + 'o primeiro número é: ' + number1);
+                console.log('Na função ' + myFunction() + 'o segundo número é: ' + number2);
+            }
+                
+            myFunction();
+                
+
+            function myFunction2() {
+                var number1 = 10;
+                var number2 = 20;
+                var sum = function sum() {
+                    return number1 + number2;
+                };
+                return sum;
+                console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined)
+            }   
+            
+            myFunction2();
+
+
+            function myFunction3() {
+                function sum() {
+                    return number1 + number2;   
+                };
+                var number1 = 40;
+                var number2 = 50;
+                console.log('A soma de 40 e 50 é igual a', sum())
+                return sum();
+            }
+
+           function calculator(firstValue, secondValue) {
+                return function(callback) {
+                   return callback(firstValue, secondValue);
+                };
+            }
+
+            var sum = calculator(10, 2);
+
+            console.log('O resultado da soma é:', sum(function (num1, num2) {
+                return num1 + num2;
+            }));
+            
+            var substraction = calculator(20,4);
+            var multiplication = calculator(3,5);
+            var division = calculator(8,2);
+            var mod = calculator(7,3);
+        
+            console.log('O resultado da subtração é:', substraction(function (num1, num2) {
+                return num1 - num2;
+            }));
+
+            console.log('O resultado da multiplicação é:', multiplication(function (num1, num2) {
+                return num1 * num2;
+            }));
+
+            console.log('O resultado da divisão é:', division(function (num1, num2) {
+                return num1 / num2;
+            }));
+
+            console.log('O resto da divisão(módulo) é:', mod(function (num1, num2) {
+                return num1 % num2;
+            }));
+        })()
+
+
+
+
+    </script>
+</html>

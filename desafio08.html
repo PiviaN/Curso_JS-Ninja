@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Desafio 08 - JS Nijna</title>
+    </head>
+    <body>
+
+    </body>
+
+    <script>
+
+        var sum = function calculateSum(a, b) {
+            return a + b;
+            }
+
+        var value1 = 20;
+        var value2 = 30;
+        console.log('A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum(value1, value2)); 
+
+        
+        console.log('O nome da função que faz a soma é: ' + sum.name);
+
+        function showName(name) {
+            return name;
+        }
+
+        var varShowName = showName;
+
+        console.log('A função ' + varShowName.name + ' retorna ' + '"' + varShowName('o nome passado em parâmetro') +  '"' + '.'); 
+
+        function calculator(operador) {
+            return function numbersToCalc(operando1, operando2) {
+                if (operador === '+') {
+                return 'O resultado da operação de soma é: ' + (operando1 + operando2);
+            } if (operador === '-') {
+                return 'O resultado da operação de subtração é: ' + (operando1 - operando2);
+            } if (operador === '/') {
+                return 'O resultado da operação de divisão é: ' + (operando1 / operando2);
+            } if (operador === '*') {
+                return 'O resultado da operação de multiplicação é: ' + (operando1 * operando2);
+            } 
+            
+            } 
+        }
+
+        var sumCalc = calculator('+');
+        var subCalc = calculator('-');
+        var multCalc = calculator('*');
+        var divCalc = calculator('/');
+
+        console.log(sumCalc(12,2)); // 14
+        console.log(subCalc(19,3)); // 16
+        console.log(multCalc(20,4)); // 80
+        console.log(divCalc(12,4)); // 3
+
+        
+    </script>
+    </html>

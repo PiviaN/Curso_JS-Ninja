@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Desafio 02 JS Ninja</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        function somar(a, b) {
+            return a + b;
+        }
+
+        const soma = somar(20, 5) + 5;
+        console.log(soma);
+
+        var variavel;
+
+        function addValue() {
+            variavel = 'VALOR';
+            return 'O valor da variável agora é: ' + variavel;
+        }
+        console.log(addValue());
+
+        function multiplicacao(a, b, c) {
+            if (arguments.length !== 3) {
+                return 'Preencha todos os valores corretamente!';
+            }
+            return (a * b *c);
+        } 
+        
+
+        const mostraMultiplicao = multiplicacao(10,4);
+        console.log(mostraMultiplicao);
+
+        function threatArguments(one, two, three) {
+            if (arguments.length === 1){
+                return one;
+            } if (arguments.length === 2) {
+                return one + two;
+            } if (arguments.length === 3) {
+                return (one + two) / three 
+            } if (arguments.length === 0) {
+                return false;
+            } else {
+                return null;
+            }
+        }
+
+        const testFunction = threatArguments(2, 5, 10); 
+        console.log(testFunction);
+    </script>
+</html>

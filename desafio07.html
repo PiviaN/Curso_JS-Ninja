@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Desafio 07 - JS Ninja</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var myArray = ['texto', NaN, Number, true, {objeto: 'pipoca'}];
+
+        function addItem(item) {
+            myArray.push(item);
+            return myArray;
+        }
+
+        console.log(addItem([3, true, 'Ninja']));
+
+        
+        console.log('O segundo elemento do segundo array é ' + myArray[5][1]);
+
+        console.log('O primeiro array tem ' + (myArray.length) + ' itens');
+
+        console.log('O segundo array tem ' + (myArray[5].length) + ' itens.');
+
+        function mostraPares() {
+            let numero = 10;
+            while (numero <= 20) {
+                numero % 2 === 0 ? console.log(numero) : '';
+                numero++;
+            }
+        }
+
+        mostraPares();
+
+        function mostraImpar() {
+            let numero = 10;
+            while (numero <= 20) {
+                numero % 2 !== 0 ? console.log(numero) : '';
+                numero++;
+            }
+        }
+
+        mostraImpar();
+
+        function forPar() {
+            for (numero = 100; numero <= 120; numero++) {
+                numero % 2 === 0 ? console.log(numero) : '';
+                numero++;
+            }
+        }
+        
+        forPar();
+
+        function forImpar() {
+            for (numero = 101; numero <= 125; numero++) {
+                numero % 2 !== 0 ? console.log(numero) : '';
+                numero++;
+            }
+        }
+
+        forImpar();
+    </script>
+
+</html>

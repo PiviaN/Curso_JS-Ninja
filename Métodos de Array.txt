@@ -1,0 +1,67 @@
+Concat: Ele não altera o valor final da array. Com o concat, você pode adicionar novos elementos à array. Pode até 
+mesmo adicionar outra array, objetos, etc.
+
+toString: Modifica os valores da array para string.
+
+Unshift: Adiciona algum elemento à primeira posição da array (posição 0)
+
+Shift: Remove o primeiro elemento de um array(0)
+
+Slice: 'Fatia' uma parte da array. Ex: arr.slice(2, 5) -> a partir da posição 2, vai cortar da array
+da posição 2 a 4, e ignorar a posição 5.
+
+Splice: É um método dinâmico. Você pode alterar a array, removendo ou adicionando novos elementos.
+Ex: arr.splice(4, 0, 'item1', 'item2') -> a partir da posição 4, vou remover 0 itens, e adicionar dois novos
+itens ao array.
+
+forEach: Ao invés de usar o for para fazer um loop do array e mostrar seus respectivos elementos, nós utilizamos
+o 'forEach', que irá ser executado através de uma function, que poderá conter 3 parâmetros, sendo eles 
+primeiramente o item do array, seguidos pelo seu índice e o próprio array.
+Ex de código: arr.forEach(function(item, index, array) {
+	console.log(item, index, array);
+});
+
+Every: serve para você verificar se uma condição é verdadeira para cada elemento do array. Como por exemplo
+verificar se cada elemento do array é divisível por 2 ou menor que 10.
+Ex de código: arr.every(function(item) {
+	return(item % 2 === 0);
+} se a condição for verdadeira, retornará true. caso contrário, retornará false
+
+Some: parecido com o every, só que dessa vez ele retornará caso se apenas um elemento do array satisfazer
+a condição imposta. Pegando o exemplo acima, se apenas um elemento do array for divisível por 2, ele retornará
+como true.
+
+Map: Percorre todos os itens do array e retorna um novo array, de acordo com os valores passados.
+Ex: arr.map(function(item) {
+	return item * 2
+}); retornará cada item do array multiplicado por 2
+
+Filter: Irá analisar o array e retornará apenas os elementos que satisfazerem uma condição
+Ex: arr.filter(function(item) {
+	return item > 2;
+}); retornará apenas os elementos do array que forem maior que 2.
+
+Reduce: Faz com que todo um conjunto de valores (array) retorne sendo apenas um valor único e inteiro, como por
+exemplo, somar cada número ou string de uma array e retornar a soma destes. Ele recebe 4 parâmetros, sendo o
+acumulado, item, índice e array, e pode receber um último parâmetro, sendo aquele que começará sendo o acumulador
+inicial.
+Ex de código: 
+var arr = [1,2,3,4,5];
+var reduce = arr.reduce(function(acumulado, item, index, array) {
+	return acumulado + atual;
+}, 0); Retornará a soma de todos os elementos do array -> 15
+
+ReduceRight: Tem a mesma função que o reduce, porém ele fará do último elemento do array até o primeiro
+(da direita para a esquerda).
+
+indexOf: Verifica se o parâmetro passado está presente no array. Se estiver, retorna o índice do array em que
+está localizado. Se não, retorna -1. Você também pode passar outro parâmetro, que indica a partir de qual
+posição ele irá começar a procurar pelo elemento.
+Ex de código: var arr = ['p','e','d','r','o'];
+	console.log(arr.indexOf('o', 3));
+	Retornará o índice em que se encontra o 'o', indiferente da posição em que começou a procurar.
+
+lastIndexOf: Mesma coisa, só que ele começa a contar da direita para a esquerda.
+
+Array.isArray(array): retorna se o tipo passado por parâmetro é array. Uma alternativa, já que o typeof sempre
+retornará como 'objeto'.

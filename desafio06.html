@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Desafio 06 - Ninja JS</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        var championship = 'Liga dos Campeões';
+
+        console.log(championship);
+
+        var teams = ['Real Madrid', 'Barcelona', 'Chelsea', 'Bayern of Munich', 'Liverpool'];
+
+        
+        console.log( 'Times que estão participando do campeonato:', teams );
+
+        function showTeamPosition(position) {
+            if (position < 1 || position > 5) {
+            return "Não temos a informação do time que está nessa posição."
+        } 
+        return 'O time que está em ' + position + 'º lugar é o ' + teams [position - 1] + '.';
+    }
+
+        console.log(showTeamPosition(3));
+
+        var i = 20;
+
+        while(i < 30) {
+            console.log(i);
+            i++;
+        }
+
+        function taylorSwitch(x) {
+        switch(x) {
+            case 0: console.log('vai pro capeta')
+            break;
+            case 1: console.log('pãooooooooooooo')
+            break;
+            case 2: console.log('eu não jogo maissss')
+            break;
+            case 3: console.log('eu sou muito bom, diga-se de passagem');
+            break;
+            case 4: console.log('bando de zé ruela');
+            break;
+            }
+        }
+        
+        console.log(taylorSwitch(4));
+        
+    </script>
+</html>

@@ -1,0 +1,27 @@
+Length: Retorna a quantidade de elementos de uma string ou array.
+
+CharAt: Retorna o elemento que está localizado segundo o parâmetro passado.
+
+Concat: Concatena com outros elementos, porém não modifica a variável.
+
+indexOf: Retorna a posição existente de um elemento passado por parâmetro. Possui 2 parâmetros, sendo o primeiro
+a string e o segundo o índice com que ele irá começar a procurar.
+
+lastIndexOf: mesma coisa, só que buscando da esquerda pra direita
+
+Replace: Faz a troca de uma string ou conjunto com outra string. Pode conter 2 parâmetros.
+
+Slice: Mesma coisa que no array.
+
+Split: Irá 'quebrar' a string, retornando um array. Você pode passar um parâmetro, que irá excluir do array 
+que será retornado a string passada por ele. Pode usar o join em seguida para voltar ao formato string.
+
+Substring: É a mesma coisa que o slice. Terá 2 parâmetros e retornará um pedaço da string.
+
+toLowerCase: Retornará toda a string em minúsculo
+
+toUpperCase: Retornará toda a string em maiúsculo
+
+Obs: Você pode pegar apenas um caráctere da string e deixar em maiúsuculo ou minúsculo,
+usando o charAt e depois o toUpperCase ou toLowerCase + slice.
+

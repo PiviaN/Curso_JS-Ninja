@@ -1,0 +1,67 @@
+parentNode: Retorna o nó que é pai ao elemento passado.
+Ex: Um elemento do body sendo antecessor de outro elemento.
+
+childNodes: Retorna todos os elementos filhos (predecessores) daquele indicado.
+Por exemplo: Um article é filho de uma tag section.
+
+firstChild: Retorna o primeiro filho Node do elemento passado.
+
+lastChild: Retorna o último filho Node do elemento pai.
+
+nextSibling: Retorna o próximo filho Node
+Ex: Pegar uma tag 'aside' que vem depois da tag 'main'
+
+previousSibling: Retorna o filho anterior Node
+
+nodeType: Retornará, de um número de 1 a ..., o índice do tipo de elemento que ele é.
+Ex: uma classe 'main' retornando o índice 1
+Dica: Você pode 'empilhar' métodos para retornar o tipo do elemento desejado
+
+nodeValue: Serve para pegar valores de textos ou comentários do código
+
+nodeName: Mostra o nome do 'nó'.
+
+Obs: Espaçamentos contam na hora de utilizar os métodos Node
+
+=============================================== // ==============================================================
+
+children: Retornará uma HTMLCollection (Não padronizada pela W3C)
+
+firstElementChild: Retornará o primeiro elemento HTML relacionado ao objeto passado.
+
+nextElementSibling: Retornará o próximo filho HTML relacionado ao objeto passado.
+
+previousElementSibling: Retornará o filho HTML anterior relacionado ao objeto passado.
+
+childElementCount: Retornará a quantidade de filhos do elemento passado. (igual ao 'children.length')
+
+============================================== // ===============================================================
+
+hasAttribute(parametro): Retornará, em boolean, se existe ou não o elemento passado por parâmetro no objeto.
+
+hasAttributes)(): Verifica se no elemento existe qualquer atributo.
+
+appendChild(child): Adiciona um filho em algum elemento.
+Ex: colocar uma seção html dentro de outra, substituindo o lugar onde estava.
+
+insertBefore(node, beforeWhom): Irá inserir um elemento node antes de outro parâmetro passado.
+
+cloneNode(boolean): Vai clonar um 'nó' que já existe. (true = você quer copiar o conteúdo do container todo?)
+Dica: Para inseri-lo no dom, use uma variável para armanezar através do appendChild.
+
+hasChildNodes(): Verifica se o elemento possui algum filho.
+
+removeChild(child): Remove o filho passado por parâmetro.
+
+replaceChild(new, old): Substitui um novo filho pelo antigo.
+
+document.createTextNode(text): Cria um texto Node.
+
+document.createElement(tagName): Cria um novo elemento.
+
+getAttribute(attr): Pega o atributo especificado do elemento, retornando uma string.
+
+setAttribute(attr, value): Faz o set de um atributo
+
+
+

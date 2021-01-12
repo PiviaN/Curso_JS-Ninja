@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Desafio 04 - JS Ninja</title>
+        <body>
+
+        </body>
+        <script>
+            
+            var isTruthy = function(param) { 
+                if (!!param === true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            console.log(isTruthy([], {}, 'false', 'true')); //true
+            console.log(isTruthy(NaN)) //false
+
+            var carro = {
+                marca: 'Bayerische Motoren Werke AG',
+                modelo: 'BMW',
+                placa: 'tmj-7543',
+                ano: 2017,
+                cor: 'black',
+                quantasPortas: 4,
+                assentos: 5,
+                quantidadePessoas: 0
+            }
+
+            carro.mudarCor = function(cor) {
+                carro.cor = cor;
+            }
+
+            carro.obterCor = function() {
+                return carro.cor;
+            }
+
+            carro.obterModelo = function() {
+                return carro.modelo;
+            }
+
+            carro.obterMarca = function() {
+                return carro.marca;
+            }
+
+            carro.obterMarcaModelo = function() {
+                return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
+            }
+
+            carro.adicionaPessoas = function(pessoas) {
+                let qtdPessoas = carro.quantidadePessoas;
+                let qtdMaxima = carro.quantidadePessoas === 5;
+
+                carro.quantidadePessoas += pessoas;
+                
+                if (qtdPessoas == 5) {
+                    return 'O carro já está lotado!' + ' ' + 'Já temos ' + qtdPessoas + ' ' + 'no carro!';
+                } 
+                if (qtdPessoas == 0) {
+                    return 'O carro está vazio';
+                } 
+                if (qtdPessoas > 5) {
+                    return 'Não cabe mais ninguém! Temos ' 
+                    + (qtdPessoas - 5) + ' ' + 
+                    'pessoas a mais que a capacidade que precisam escolher outro carro para viajar. '
+
+                } if (qtdPessoas < 5) {
+                    return 'Temos ' + qtdPessoas + ' ' + 'no carro. ' 
+                    + 'Faltam ' + (5 - qtdPessoas) + ' ' + 'para atingir a capacidade total';
+                }
+            } 
+            
+            console.log(carro.obterCor()); //black
+
+            carro.mudarCor('vermelho');
+            console.log(carro.obterCor()); //vermelho
+
+            carro.mudarCor('Verde Musgo');
+            console.log(carro.obterCor()); //Verde Musgo
+
+            console.log(carro.obterMarcaModelo()); //Esse carro é um Bayerische Motoren Werke AG BMW
+            
+            carro.adicionaPessoas(4);
+            console.log(carro.adicionaPessoas());
+        </script>
+</html>

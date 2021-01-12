@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Desafio 12 - JS Ninja</title></head>
+    <body>
+        
+    </body>
+    <script>
+        (function() {
+
+            var person = {
+                name: 'Pedro',
+                lastname: 'Nepomuceno',
+                age: 19
+            }
+
+            console.log('Propriedades de person: ', Object.keys(person));
+
+            var books = [];
+            
+            books.push(
+                livro1 =  {
+                    name: 'Mitologia nórdica',
+                    pages: 292
+                },
+                livro2 = {
+                    name: 'Mitologia grega',
+                    pages: 346
+                },
+                livro3 = {
+                    name: 'Mitologia romana',
+                    pages: 457
+                })
+
+                console.log('\nLista de livros', books);
+
+                console.log( '\nLivro que está sendo removido: ', books.pop());
+
+                console.log(' \nAgora sobraram somente os livros: ', books)
+
+                var bookString = JSON.stringify(books);
+
+                console.log(' \nLivros em formato string: ', bookString);
+
+                var bookObject = JSON.parse(bookString);
+
+                console.log(' \nVoltando os livros para objetos: ', bookObject);
+
+                for (var p in books) {
+                    console.log(books[p].name + ': ' + books[p].pages + ' páginas');
+                    p++;
+                }
+
+                var myName = ['P', 'E', 'D', 'R', 'O']; 
+
+                console.log(myName.join(''));
+
+                console.log(myName.reverse());
+
+                console.log(myName.sort());
+
+        })()
+    </script>
+</html>
